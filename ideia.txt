@@ -1,0 +1,14 @@
+
+https://www.sourcecon.com/how-to-find-almost-any-github-users-email-address/
+
+https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address
+
+https://api.github.com/users/saymoncoppi/events/public
+
+"author": {
+            "email": "saymoncoppi@gmail.com",
+            "name": "saymoncoppi"
+          },
+
+
+read git_user; wget -nv -q -O- https://api.github.com/users/$git_user/events/public | sed -n -e 's/^.*"email": "//p' | sed -e 's/\"\,//g' | tail -n1
